@@ -1,4 +1,5 @@
 using System;
+using TripLog.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,7 @@ namespace TripLog.Views
         public NewEntryPage()
         {
             InitializeComponent();
+            BindingContext = new NewEntryViewModel();
         }
 
         private void Save_Clicked(object sender, EventArgs e)

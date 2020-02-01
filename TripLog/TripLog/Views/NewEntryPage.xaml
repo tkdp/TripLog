@@ -5,19 +5,26 @@
              x:Class="TripLog.Views.NewEntryPage"
              Title="New Entry">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+        <ToolbarItem Text="Save" Command="{Binding SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <TableView Intent="Form">
             <TableView.Root>
                 <TableSection>
-                    <EntryCell Label="Title" />
+                    <EntryCell Label="Title"
+                               Text="{Binding Title}" />
                     <EntryCell Label="Latitude"
-                               Keyboard="Numeric" />
+                               Keyboard="Numeric"
+                               Text="{Binding Latitude}" />
                     <EntryCell Label="Longitude"
-                               Keyboard="Numeric" />
-                    <EntryCell Label="Date" />
-                    <EntryCell Label="Noteds" />
+                               Keyboard="Numeric"
+                               Text="{Binding Longitude}" />
+                    <EntryCell Label="Date"
+                               Text="{Binding Date, StringFormat='{0:d}'}" />
+                    <EntryCell Label="Rating"
+                               Text="{Binding Rating}" />
+                    <EntryCell Label="Notes"
+                               Text="{Binding Notes}" />
                 </TableSection>
             </TableView.Root>
         </TableView>
