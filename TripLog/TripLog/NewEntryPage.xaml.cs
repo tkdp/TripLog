@@ -16,5 +16,10 @@ namespace TripLog
         {
             InitializeComponent();
         }
+
+        private void Save_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

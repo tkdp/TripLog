@@ -14,7 +14,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
   </PropertyGroup>
@@ -82,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TripLog\TripLog.csproj">
-      <Project>{68F9CA24-096D-4FC2-91D2-5D65A783BA60}</Project>
+      <Project>{2DF2A840-AA3B-4F97-A260-95D75E1C8888}</Project>
       <Name>TripLog</Name>
     </ProjectReference>
   </ItemGroup>
