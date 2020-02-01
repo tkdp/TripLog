@@ -1,14 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TripLog.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
-namespace TripLog
+namespace TripLog.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailPage : ContentPage
@@ -16,8 +11,9 @@ namespace TripLog
         public DetailPage(TripLogEntry entry)
         {
             InitializeComponent();
-            
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(entry.Latitude, entry.Longitude), Distance.FromKilometers(.5)));
+
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(entry.Latitude, entry.Longitude),
+                Distance.FromKilometers(.5)));
 
             map.Pins.Add(new Pin
             {
