@@ -1,4 +1,5 @@
 using TripLog.Models;
+using TripLog.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
@@ -12,20 +13,19 @@ namespace TripLog.Views
         {
             InitializeComponent();
 
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(entry.Latitude, entry.Longitude),
+            BindingContext = new DetailViewsModel(entry);
+
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(_vm.Entry.Latitude, _vm.Entry.Longitude),
                 Distance.FromKilometers(.5)));
 
             map.Pins.Add(new Pin
             {
                 Type = PinType.Place,
-                Label = entry.Title,
-                Position = new Position(entry.Latitude, entry.Longitude)
+                Label = _vm.Entry.Title,
+                Position = new Position(_vm.Entry.Latitude, _vm.Entry.Longitude)
             });
-
-            title.Text = entry.Title;
-            date.Text = entry.Date.ToString("M");
-            rating.Text = $"{entry.Rating} star rating";
-            notes.Text = entry.Notes;
         }
+
+        private DetailViewsModel _vm => BindingContext as DetailViewsModel;
     }
 }
