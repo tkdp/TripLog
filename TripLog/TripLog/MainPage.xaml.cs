@@ -46,5 +46,10 @@ namespace TripLog
             };
             trips.ItemsSource = items;
         }
+
+        void New_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NewEntryPage() );
+        }
     }
 }
